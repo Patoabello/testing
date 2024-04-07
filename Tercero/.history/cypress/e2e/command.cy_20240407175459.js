@@ -7,13 +7,9 @@ let findProduct = 'Macbook';
 
 
 describe('template spec', () => {
-
-  beforeEach(function(){
-    cy.visit('https://naveenautomationlabs.com/opencart/index.php?route=account/login')
-  });
-
   it('passes', () => {
-    
+   
+    data.pagePpal();
     cy.prueba(mail, passw);
     cy.search(findProduct);
     cy.logout();

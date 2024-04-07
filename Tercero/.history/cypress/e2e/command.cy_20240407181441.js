@@ -13,7 +13,7 @@ describe('template spec', () => {
   });
 
   it('passes', () => {
-    
+       data.pagePpal();
     cy.prueba(mail, passw);
     cy.search(findProduct);
     cy.logout();

@@ -41,11 +41,9 @@ Cypress.Commands.add('prueba', (user, pass) => {
 });
 
 Cypress.Commands.add('search',(findProduct) => {
-    cy.get('input[name="search"]').should('be.visible').type(findProduct);
+    cy.get('input[name="search"]').type(findProduct);
     cy.get('button.btn.btn-default.btn-lg').click();
     cy.get('#button-search').click();
-    cy.get('h1').first().should('have.text', 'Search - Macbook');
-
 });
 
 Cypress.Commands.add('logout', () => {

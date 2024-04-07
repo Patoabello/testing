@@ -24,34 +24,8 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
-/*
-Cypress.Commands.add('login', (m, p) => {  
-    cy.get('#input-email').type(m);
-    cy.get('#input-password').type(p);
+Cypress.Commands.add('login', (mail, passw) => {
+    cy.get('#input-email').type(mail);
+    cy.get('#input-password').type(passw);
     cy.get('input[type="submit"].btn.btn-primary').click();
 });
-
-*/
-
-Cypress.Commands.add('prueba', (user, pass) => {
-    cy.get('#input-email').type(user);
-    cy.get('#input-password').type(pass);
-    cy.get('input[type="submit"].btn.btn-primary').click();
-
-});
-
-Cypress.Commands.add('search',(findProduct) => {
-    cy.get('input[name="search"]').should('be.visible').type(findProduct);
-    cy.get('button.btn.btn-default.btn-lg').click();
-    cy.get('#button-search').click();
-    cy.get('h1').first().should('have.text', 'Search - Macbook');
-
-});
-
-Cypress.Commands.add('logout', () => {
-   cy.visit('https://naveenautomationlabs.com/opencart/index.php?route=account/account');
-   cy.get('a.list-group-item').contains('Logout').click();
-   cy.get('h1').should('be.visible');
-   cy.get('h1').first().should('have.text', 'Account Logout');
-
-})
